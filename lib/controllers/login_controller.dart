@@ -19,7 +19,7 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  Future<void> login() async {
+  Future<String?> login() async {
     CustomFullScreenDialog.showDialog();
     GoogleSignInAccount? googleSignInAccount =
         await homeController.googleSignIn.signIn();
@@ -34,6 +34,7 @@ class LoginController extends GetxController {
       );
       await homeController.firebaseAuth.signInWithCredential(oAuthCredential);
       CustomFullScreenDialog.cancelDialog();
+      return oAuthCredential.accessToken;
     }
   }
 }

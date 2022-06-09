@@ -35,8 +35,9 @@ class LoginPage extends GetView<LoginController> {
                   "Sign In with Google",
                   style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
-                onPressed: () {
-                  controller.login();
+                onPressed: () async {
+                  String? token = await controller.login();
+                  print(token);
                 },
               ),
             ),
