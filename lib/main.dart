@@ -2,12 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in_getx/bindings/home_binding.dart';
+import 'package:google_sign_in_getx/bindings/login_binding.dart';
 import 'package:google_sign_in_getx/routes/app_pages.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   HomeBinding().dependencies();
+  LoginBinding().dependencies();
   runApp(const MyApp());
 }
 

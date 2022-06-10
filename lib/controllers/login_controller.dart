@@ -6,6 +6,7 @@ import 'package:google_sign_in_getx/views/customFullScreenDialog.dart';
 
 class LoginController extends GetxController {
   HomeController homeController = Get.find<HomeController>();
+  String? token = 'Long';
   @override
   void onInit() {
     super.onInit();
@@ -34,7 +35,8 @@ class LoginController extends GetxController {
       );
       await homeController.firebaseAuth.signInWithCredential(oAuthCredential);
       CustomFullScreenDialog.cancelDialog();
-      return oAuthCredential.accessToken;
+      token = oAuthCredential.accessToken;
+      return token;
     }
   }
 }

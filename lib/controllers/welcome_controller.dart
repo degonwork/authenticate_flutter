@@ -6,7 +6,7 @@ class WelcomeController extends GetxController {
   HomeController homeController = Get.find<HomeController>();
   late User user;
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
     user = Get.arguments;
   }
